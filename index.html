@@ -15,7 +15,7 @@
         }
         /* Custom styles for hero section background image */
         .hero-section {
-            background-image: url('https://placehold.co/1920x800/e0e0e0/ffffff?text=Chúc+Mừng+Sinh+Nhật+Minh+Khuê'); /* Placeholder image for hero */
+            background-image: url('images/topbar.jpeg'); /* Placeholder image for hero */
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -61,7 +61,7 @@
 <body class="text-gray-800">
 
     <!-- Hero Section -->
-    <section class="hero-section relative h-[600px] md:h-[700px] lg:h-[800px] flex items-center justify-center text-center text-white p-4">
+    <section class="hero-section relative h-[100vh] md:h-[100vh] lg:h-[100vh] flex items-center justify-center text-center text-white p-4">
         <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Dark overlay for text readability -->
         <div class="relative z-10 flex flex-col items-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg leading-tight">
@@ -118,9 +118,9 @@
                 </div>
                 <!-- Image Grid Item 2 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
-                    <img src="images/Lần đầu đi QT cùng nhau.jpg" alt="Ảnh kỷ niệm 2" class="w-full h-48 md:h-64 object-cover">
+                    <img src="images/chuyến đi có kế hoạch.jpeg" alt="Ảnh kỷ niệm 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
-                        <p class="font-medium text-gray-900 text-sm md:text-base">Tiệc Bạn Bè Thân Thiết</p>
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Chuyến đi có kế hoạch</p>
                         <p class="text-xs text-gray-500 mt-1">Tháng 9, 2024</p>
                     </div>
                 </div>
@@ -134,11 +134,13 @@
                 </div>
                 <!-- Images Grid Item 4 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
-                    <video src="images/Lần đầu ngắm pháo hoa cùng nhau.mp4" alt="Ảnh kỷ niệm 4" class="w-full h-48 md:h-64 object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                    <video controls autoplay muted loop preload="auto" alt="Ảnh kỷ niệm 4" class="w-full h-48 md:h-64 object-cover">
+                        <source src="images/Lần đầu ngắm pháo hoa cùng nhau.mp4" type="video/mp4">
+                    </video>
+                    <!-- <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
                         <p class="font-medium text-gray-900 text-sm md:text-base">Nụ Cười Hạnh Phúc</p>
                         <p class="text-xs text-gray-500 mt-1">Tháng 8, 2024</p>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- Image Grid Item 5 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
