@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Đặc Biệt</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8; /* Light background similar to the reference image */
+        }
+        /* Custom styles for hero section background image */
+        .hero-section {
+            background-image: url('https://placehold.co/1920x800/e0e0e0/ffffff?text=Chúc+Mừng+Sinh+Nhật+Minh+Khuê'); /* Placeholder image for hero */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /* Using a linear gradient overlay for better text readability */
+            background-blend-mode: overlay;
+            background-color: rgba(56, 210, 207, 0.2); /* Darker overlay */
+        }
+        /* Style for image overlay to match the subtle shadow/glow in the reference image */
+        .img-overlay {
+            position: relative;
+            z-index: 1; /* Ensure content is above overlay */
+        }
+        .img-overlay::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(153, 176, 222, 0.5) 0%, rgba(255, 255, 255, 0) 50%); /* Subtle white gradient at bottom */
+            z-index: -1; /* Place behind image content */
+            border-radius: 0.75rem; /* Match rounded corners */
+        }
+
+        /* Specific style for contact form background if needed, otherwise Tailwind's bg-white is fine */
+        .contact-form-section {
+            background-color: #ffffff;
+        }
+
+        /* Placeholder image styles for gallery - will be replaced with actual images */
+        .gallery-image {
+            background-color: #e0e0e0;
+            color: #37849c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.875rem; /* text-sm */
+            border-radius: 0.75rem; /* rounded-xl */
+            height: 100%; /* Ensure placeholder fills the div */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Hero Section -->
+    <section class="hero-section relative h-[600px] md:h-[700px] lg:h-[800px] flex items-center justify-center text-center text-white p-4">
+        <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Dark overlay for text readability -->
+        <div class="relative z-10 flex flex-col items-center">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg leading-tight">
+                Chúc Mừng Sinh Nhật Minh Khuê!
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl font-light mb-8 drop-shadow-md">
+                Một Ngày Đặc Biệt Để Kỷ Niệm Những Khoảnh Khắc Tuyệt Vời
+            </p>
+            <button class="bg-white text-pink-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-100 transition duration-300 transform hover:scale-105">
+                Khám Phá Câu Chuyện
+            </button>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
+        <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
+            Hành trình của chúng ta
+        </h2>
+        <div class="flex flex-col md:flex-row items-center gap-10">
+            <div class="md:w-1/2">
+                <img src="images/Lần đầu đứng chung khung hình.jpg" alt="Ảnh câu chuyện 1" class="rounded-xl shadow-lg w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2 text-lg leading-relaxed text-gray-700">
+                <p class="mb-6">
+                    Lần đầu tiên chúng ta gặp nhau trong lúc đất nước không mấy vui vẻ, nhưng chúng ta vui vẻ vì đã gặp được nhau ^_^.
+                </p>
+                <p class="mb-6">
+                    Chị đã gọi một ly đen đá khiến em bất ngờ.
+                </p>
+                <p>
+                    Và lần gặp thứ 2 chúng ta đã có bức ảnh chung này.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section class="bg-white py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
+                Thư Viện Khoảnh Khắc Đáng Yêu
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Image Grid Item 1 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Đám cưới.jpg" alt="Ảnh kỷ niệm 1" class="w-full h-48 md:h-64 object-cover">
+                    <!-- Lazy loading for actual images: add loading="lazy" -->
+                    <!-- <img src="url_to_your_image.jpg" alt="Description" class="w-full h-48 md:h-64 object-cover" loading="lazy"> -->
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Ngày Vui Của Chị</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 7, 2023</p>
+                    </div>
+                </div>
+                <!-- Image Grid Item 2 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Lần đầu đi QT cùng nhau.jpg" alt="Ảnh kỷ niệm 2" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Tiệc Bạn Bè Thân Thiết</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 9, 2024</p>
+                    </div>
+                </div>
+                <!-- Image Grid Item 3 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Lần đầu bay đêm.jpg" alt="Ảnh kỷ niệm 3" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Chuyến Đi Đáng Nhớ</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 3, 2025</p>
+                    </div>
+                </div>
+                <!-- Images Grid Item 4 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <video src="images/Lần đầu ngắm pháo hoa cùng nhau.mp4" alt="Ảnh kỷ niệm 4" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Nụ Cười Hạnh Phúc</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 8, 2024</p>
+                    </div>
+                </div>
+                <!-- Image Grid Item 5 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/lần đầu tiên countdown cùng nhau.jpg" alt="Ảnh kỷ niệm 5" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Khoảnh Khắc chuyển giao</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 1, 2025</p>
+                    </div>
+                </div>
+                <!-- Image Grid Item 6 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Lần đầu đi bảo tàng cùng nhau.jpg" alt="Ảnh kỷ niệm 6" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Tháng Sinh Nhật Đầu Tiên</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 4, 2025</p>
+                    </div>
+                </div>
+                <!-- Add more images here following the same structure -->
+                <!-- Image Grid Item 7 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Trekking giữa trưa.jpg" alt="Ảnh kỷ niệm 7" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Ngày rãnh rỗi</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 12, 2024</p>
+                    </div>
+                </div>
+                <!-- Image Grid Item 8 -->
+                <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
+                    <img src="images/Bộ móng đầu tiên.jpg" alt="Ảnh kỷ niệm 8" class="w-full h-48 md:h-64 object-cover">
+                    <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
+                        <p class="font-medium text-gray-900 text-sm md:text-base">Niềm Vui Tuổi Trẻ</p>
+                        <p class="text-xs text-gray-500 mt-1">Tháng 1, 2025</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button class="bg-pink-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 transform hover:scale-105">
+                    Xem Thêm Khoảnh Khắc
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section py-16 md:py-24">
+        <div class="container mx-auto px-4 max-w-2xl">
+            <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
+                Chúc mừng sinh nhật chị toi
+            </h2>
+            <form class="bg-white p-8 md:p-12 rounded-xl shadow-lg border border-gray-100">
+                <div class="mb-6">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Cô bé đáng yêu:</label>
+                    <input type="text" id="name" name="name" class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 transition duration-200" placeholder="Na Na" required>
+                </div>
+                <div class="mb-8">
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Gửi đến chị đại:</label>
+                    <textarea id="message" name="message" rows="6" class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-pink-300 focus:border-pink-300 transition duration-200" placeholder="Chúc chị Minh Khuê sinh nhật vui vẻ, luôn mạnh khỏe và hạnh phúc!" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-pink-600 text-white font-semibold py-3 px-10 rounded-full shadow-lg hover:bg-pink-700 transition duration-300 transform hover:scale-105">
+                        Gửi Lời Chúc
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Love / Closing Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-pink-100 to-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-semibold text-pink-600 mb-8">
+                Thêm tuổi mới nhưng không khác nhiều!
+            </h2>
+            <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-8">
+                Món quà sinh nhật từ bé Na dành cho chị Minh Khuê. Thật tuyệt vời khi chúng em có một người chị xã hội như này hé hé!
+            </p>
+            <img src="images/kết.jpg" alt="Ảnh kết" class="rounded-xl shadow-lg mx-auto w-full max-w-xs md:max-w-sm h-auto object-cover">
+        </div>
+    </section>
+
+</body>
+</html>
