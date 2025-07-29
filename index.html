@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chúc Mừng Sinh Nhật Đặc Biệt</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -56,17 +54,37 @@
             border-radius: 0.75rem; /* rounded-xl */
             height: 100%; /* Ensure placeholder fills the div */
         }
+        /* Style for the sound control button */
+        #soundControl {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
     </style>
 </head>
 <body class="text-gray-800">
-    <audio autoplay>
+    <audio id="backgroundMusic" autoplay muted loop>
         <source src="images/bg.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
     </audio>
 
-    <!-- Hero Section -->
+    <button id="soundControl" class="flex items-center justify-center text-gray-700">
+        <svg id="volumeOnIcon" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 5.343a1 1 0 010 1.414L16.586 9H13a1 1 0 010 2h3.586l-1.929 2.243a1 1 0 011.414 1.414l3.182-3.182a1 1 0 010-1.414l-3.182-3.182a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+        </svg>
+        <svg id="volumeOffIcon" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 5.343a1 1 0 010 1.414L16.586 9H13a1 1 0 010 2h3.586l-1.929 2.243a1 1 0 011.414 1.414l3.182-3.182a1 1 0 010-1.414l-3.182-3.182a1 1 0 01-1.414 0zm-8.485 6.364a1 1 0 00-1.414 1.414l.707.707a1 1 0 001.414-1.414l-.707-.707z" clip-rule="evenodd"></path>
+        </svg>
+    </button>
+
     <section class="hero-section relative h-[100vh] md:h-[100vh] lg:h-[100vh] flex items-center justify-center text-center text-white p-4">
-        <div class="absolute inset-0 bg-black opacity-30"></div> <!-- Dark overlay for text readability -->
-        <div class="relative z-10 flex flex-col items-center">
+        <div class="absolute inset-0 bg-black opacity-30"></div> <div class="relative z-10 flex flex-col items-center">
             <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 drop-shadow-lg leading-tight">
                 Chúc Mừng Sinh Nhật Minh Khuê!
             </h1>
@@ -79,7 +97,6 @@
         </div>
     </section>
 
-    <!-- Story Section -->
     <section class="container mx-auto px-4 py-16 md:py-24 max-w-4xl">
         <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
             Hành trình của chúng ta
@@ -102,24 +119,19 @@
         </div>
     </section>
 
-    <!-- Photo Gallery Section -->
     <section class="bg-white py-16 md:py-24">
         <div class="container mx-auto px-4 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
                 Thư Viện Khoảnh Khắc Đáng Yêu
             </h2>
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                <!-- Image Grid Item 1 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/Đám cưới.jpg" alt="Ảnh kỷ niệm 1" class="w-full h-48 md:h-64 object-cover">
-                    <!-- Lazy loading for actual images: add loading="lazy" -->
-                    <!-- <img src="url_to_your_image.jpg" alt="Description" class="w-full h-48 md:h-64 object-cover" loading="lazy"> -->
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
                         <p class="font-medium text-gray-900 text-sm md:text-base">Ngày Vui Của Chị</p>
                         <p class="text-xs text-gray-500 mt-1">Tháng 7, 2023</p>
                     </div>
                 </div>
-                <!-- Image Grid Item 2 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/chuyến đi có kế hoạch.jpeg" alt="Ảnh kỷ niệm 2" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -127,7 +139,6 @@
                         <p class="text-xs text-gray-500 mt-1">Tháng 9, 2024</p>
                     </div>
                 </div>
-                <!-- Image Grid Item 3 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/Lần đầu bay đêm.jpg" alt="Ảnh kỷ niệm 3" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -135,17 +146,11 @@
                         <p class="text-xs text-gray-500 mt-1">Tháng 3, 2025</p>
                     </div>
                 </div>
-                <!-- Images Grid Item 4 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <video controls autoplay muted loop preload="auto" alt="Ảnh kỷ niệm 4" class="w-full h-48 md:h-64 object-cover">
                         <source src="images/Lần đầu ngắm pháo hoa cùng nhau.mp4" type="video/mp4">
                     </video>
-                    <!-- <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
-                        <p class="font-medium text-gray-900 text-sm md:text-base">Nụ Cười Hạnh Phúc</p>
-                        <p class="text-xs text-gray-500 mt-1">Tháng 8, 2024</p>
-                    </div> -->
-                </div>
-                <!-- Image Grid Item 5 -->
+                    </div>
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/lần đầu tiên countdown cùng nhau.jpg" alt="Ảnh kỷ niệm 5" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -153,7 +158,6 @@
                         <p class="text-xs text-gray-500 mt-1">Tháng 1, 2025</p>
                     </div>
                 </div>
-                <!-- Image Grid Item 6 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/Lần đầu đi bảo tàng cùng nhau.jpg" alt="Ảnh kỷ niệm 6" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -161,8 +165,6 @@
                         <p class="text-xs text-gray-500 mt-1">Tháng 4, 2025</p>
                     </div>
                 </div>
-                <!-- Add more images here following the same structure -->
-                <!-- Image Grid Item 7 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/Trekking giữa trưa.jpg" alt="Ảnh kỷ niệm 7" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -170,7 +172,6 @@
                         <p class="text-xs text-gray-500 mt-1">Tháng 12, 2024</p>
                     </div>
                 </div>
-                <!-- Image Grid Item 8 -->
                 <div class="relative group rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:scale-105 img-overlay">
                     <img src="images/Bộ móng đầu tiên.jpg" alt="Ảnh kỷ niệm 8" class="w-full h-48 md:h-64 object-cover">
                     <div class="absolute bottom-0 left-0 right-0 p-4 bg-white bg-opacity-90 transition-opacity duration-300 rounded-b-xl">
@@ -187,7 +188,6 @@
         </div>
     </section>
 
-    <!-- Contact Form Section -->
     <section class="contact-form-section py-16 md:py-24">
         <div class="container mx-auto px-4 max-w-2xl">
             <h2 class="text-3xl md:text-4xl font-semibold text-center text-pink-600 mb-12">
@@ -211,7 +211,6 @@
         </div>
     </section>
 
-    <!-- Love / Closing Section -->
     <section class="py-16 md:py-24 bg-gradient-to-r from-pink-100 to-white">
         <div class="container mx-auto px-4 max-w-4xl text-center">
             <h2 class="text-3xl md:text-4xl font-semibold text-pink-600 mb-8">
@@ -223,8 +222,44 @@
             <img src="images/kết.jpg" alt="Ảnh kết" class="rounded-xl shadow-lg mx-auto w-full max-w-xs md:max-w-sm h-auto object-cover">
         </div>
     </section>
+
     <script>
-        window.addEventListener('scroll', () => document.querySelector('audio').play())
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundMusic = document.getElementById('backgroundMusic');
+            const soundControl = document.getElementById('soundControl');
+            const volumeOnIcon = document.getElementById('volumeOnIcon');
+            const volumeOffIcon = document.getElementById('volumeOffIcon');
+
+            // Attempt to play muted on load
+            backgroundMusic.play().catch(error => {
+                console.log("Autoplay was prevented. User interaction needed.", error);
+                // If autoplay fails, the sound control button remains visible but might not immediately unmute.
+                // The user will still need to click it.
+            });
+
+            soundControl.addEventListener('click', () => {
+                if (backgroundMusic.muted) {
+                    backgroundMusic.muted = false;
+                    volumeOnIcon.classList.remove('hidden');
+                    volumeOffIcon.classList.add('hidden');
+                    // In case autoplay was prevented, try playing again on user interaction
+                    backgroundMusic.play().catch(e => console.log("Failed to play on click:", e));
+                } else {
+                    backgroundMusic.muted = true;
+                    volumeOnIcon.classList.add('hidden');
+                    volumeOffIcon.classList.remove('hidden');
+                }
+            });
+
+            // Initial state of the icon based on muted property
+            if (backgroundMusic.muted) {
+                volumeOnIcon.classList.add('hidden');
+                volumeOffIcon.classList.remove('hidden');
+            } else {
+                volumeOnIcon.classList.remove('hidden');
+                volumeOffIcon.classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
